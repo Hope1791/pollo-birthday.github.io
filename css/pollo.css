@@ -1,0 +1,146 @@
+body {
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .banner {
+    background-color: #ff6666;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .photos {
+    margin-top: 20px;
+  }
+  
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espacio entre las fotos */
+  }
+  
+  .photo-card {
+    perspective: 1000px;
+  }
+  
+  .photo {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .photo-card:hover .photo {
+    transform: rotateY(180deg) scale(1.1);
+  }
+  
+  .photo img,
+  .photo .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .photo img {
+    background-color: #ff9999;
+  }
+  
+  .photo .back {
+    background-color: #ffe6e6;
+    color: #ff6666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .message {
+    margin-top: 20px;
+    background-color: #ffe6e6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ff6666;
+  }
+  
+  .video {
+    margin-top: 20px;
+  }
+  
+  .video video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ff6666;
+    transform: rotate(-45deg);
+    animation: float 6s infinite;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #ff6666;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -25px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 25px;
+    top: 0;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+  
